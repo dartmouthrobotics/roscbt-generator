@@ -92,9 +92,6 @@ class roscbt:
                 exec(
                     "rospy.Subscriber('/robot_{0}_{1}/{2}', {3}, self.message_callback{0}_{1}, queue_size = 100)".format(
                         robot_id, id, topic[0], topic[1]))
-                rospy.loginfo(
-                    "Subscriptions: rospy.Subscriber('/robot_{0}_{1}/{2}', {3}, self.message_callback{0}_{1}, queue_size = 100)".format(
-                        robot_id, id, topic[0], topic[1]))
                 # populating publisher datastructure
                 exec('pub=rospy.Publisher("/roscbt/robot_{}/{}", {}, queue_size=10)'.format(robot_id, topic[0],
                                                                                             topic[1]))
@@ -205,20 +202,6 @@ class roscbt:
         signal_path = self.compute_signal_path(self, robot1_pose, robot2_pose)
         # now get all the
 
-        rospy.loginfo("Signal Path: {}".format(signal_path))
-        rospy.loginfo(
-            "Robot 1 Pose: ({},{}), Pixel Position: {} Neighboring Pixel Poses: {}, Pixels: {}".format(robot1_pose.x,
-                                                                                                       robot1_pose.y,
-                                                                                                       robot_1_pixel_pos,
-                                                                                                       pixel1_neighbors,
-                                                                                                       pixels1))
-
-        rospy.loginfo(
-            "Robot 2 Pose: ({},{}), Pixel Position: {} Neighboring Pixel Poses: {}, Pixels: {}".format(robot2_pose.x,
-                                                                                                       robot2_pose.y,
-                                                                                                       robot_2_pixel_pos,
-                                                                                                       pixel2_neighbors,
-                                                                                                       pixels2))
         robot1_type = self.robot_types[str(robot_id1)]
         robot2_type = self.robot_types[str(robot_id2)]
 
