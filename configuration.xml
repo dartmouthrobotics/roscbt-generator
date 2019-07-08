@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<roscbt to-pkg='finalproject'>
+    <remaps>
+        <topic name="karto_out"  message_type="LocalizedScan" from="karto_out"  to="/karto_out" pkg="nav2d_karto" message_pkg="nav2d_msgs" remap="1" />
+    </remaps>
+    <topics ns="robot">
+        <topic name="karto_in"  pkg="nav2d_karto" message_type="LocalizedScan" message_pkg="nav2d_msgs" remap="1"/>
+<!--        <topic name="map"  pkg="nav2d_karto"  message_type="LocalizedMap" message_pkg="sensor_msgs" remap="1"/>-->
+        <topic name="base_pose_ground_truth"  pkg="nav_msgs"  message_type="Odometry" message_pkg="nav_msgs" remap="0"/>
+    </topics>
+    <topology>
+        <robot-mappping id="1"  default_comm_model='disc'>
+			<robot >0</robot>
+			<robot>1</robot>
+<!--			<robot >3</robot>-->
+        </robot-mappping>
+<!--		 <robot-mappping id="2" default_comm_model='disc'>-->
+<!--			<robot >4</robot>-->
+<!--			<robot >6</robot>-->
+<!--			<robot>7</robot>-->
+<!--        </robot-mappping>-->
+    </topology>
+</roscbt>
+
+
