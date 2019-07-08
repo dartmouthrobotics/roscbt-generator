@@ -193,15 +193,6 @@ class roscbt:
         robot1_pose = self.robot_pose[robot_id1].pose.pose.position
         robot2_pose = self.robot_pose[robot_id2].pose.pose.position
 
-        robot_1_pixel_pos = self.pose_to_pixel(robot1_pose)
-        robot_2_pixel_pos = self.pose_to_pixel(robot2_pose)
-
-        pixel1_neighbors, pixels1 = self.get_pixel_neighbors(robot_1_pixel_pos, distance=2)
-        pixel2_neighbors, pixels2 = self.get_pixel_neighbors(robot_2_pixel_pos, distance=2)
-
-        signal_path = self.compute_signal_path(self, robot1_pose, robot2_pose)
-        # now get all the
-
         robot1_type = self.robot_types[str(robot_id1)]
         robot2_type = self.robot_types[str(robot_id2)]
 
